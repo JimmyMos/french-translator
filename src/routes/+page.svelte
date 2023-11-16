@@ -155,7 +155,7 @@
     <link rel="stylesheet" href="/css/reset.css?11231">
     <link rel="stylesheet" href="/css/styles.css?11231">
 
-    <title>Free Image Cropper Online</title>
+    <title>AI French translator</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
