@@ -156,6 +156,14 @@
     <link rel="stylesheet" href="/css/styles.css?11231">
 
     <title>AI French translator</title>
+    <meta name="description" content="AI French translator">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{data.origin}">
+    <meta property="og:title" content="AI French translator">
+    <meta property="og:description" content="AI French translator">
+    <meta property="og:image" content="{data.origin}/favicon.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
