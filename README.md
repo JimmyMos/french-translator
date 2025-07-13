@@ -1,38 +1,22 @@
-# create-svelte
+# French Translator
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+> 🛑 This project was developed in 2023 and is no longer maintained.
 
-## Creating a project
+> Proof of concept that hacks the private API used by Google Translate to obtain translations for free—without relying on the official paid API.
 
-If you're seeing this, you've probably already done this step. Congrats!
+This SvelteKit repository demonstrates how to replay the requests made by the mobile / web Google Translate app (`translate.googleapis.com/translate_a/single…`) and bypass billing.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+It was created solely to gain hands-on experience with penetration testing, network-traffic reverse engineering, and API-security analysis.
+Do not use this code in production: it violates Google’s Terms of Service, can stop working at any time, and carries no warranty.
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+## Technical workings
 
-## Developing
+**Reverse-engineer** Google Translate traffic to locate the internal endpoint …/translate_a/single.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+**Generate the `tk` token** by reproducing the obfuscated algorithm found in Google’s JavaScript.
 
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+**Send a “client = gtx” request** (or equivalent) with the parameters:
+- sl=auto  # source language detected automatically
+- tl=fr  # target = French
+- dt=t  # returns only the translated text
+- q=…  # URL-encoded text
